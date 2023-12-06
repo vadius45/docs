@@ -447,6 +447,16 @@ opening up for hybrid and multi-cloud setups (currently, manual switchover
 across data centers is required, while waiting for Kubernetes federation
 native capabilities).
 
+### Tablespace support
+
+EDB Postgres for Kubernetes seamlessly integrates robust support for PostgreSQL tablespaces
+by facilitating the declarative definition of individual persistent volumes.
+This innovative feature empowers you to efficiently distribute I/O operations
+across a diverse array of storage devices. Through the transparent
+orchestration of tablespaces, EDB Postgres for Kubernetes enhances the performance and
+scalability of PostgreSQL databases, ensuring a streamlined and optimized
+experience for managing large scale data storage in cloud-native environments.
+
 ### Liveness and readiness probes
 
 The operator defines liveness and readiness probes for the Postgres
@@ -544,10 +554,14 @@ connect to the PgBouncer service and start reusing any existing connection.
 
 ### Integration with external backup tools for Kubernetes
 
-EDB Postgres for Kubernetes provides an add-on to integrate with
-[Velero](https://velero.io/), a very popular open source tool to
-back up and restore Kubernetes resources and persistent volumes and
-[OpenShift API for Data Protection (OADP)](https://github.com/openshift/oadp-operator).
+EDB Postgres for Kubernetes provides add-ons to integrate with:
+
+-   [Kasten](https://kasten.io/), a very popular data protection tool for
+    Kubernetes, enabling backup and restore, disaster recovery, and application
+    mobility for cloud native applications
+-   [Velero](https://velero.io/), a very popular open source tool to
+    back up and restore Kubernetes resources and persistent volumes and
+    [OpenShift API for Data Protection (OADP)](https://github.com/openshift/oadp-operator)
 
 Moreover, the [external backup adapter add-on](addons/#external-backup-adapter)
 provides a generic interface to integrate EDB Postgres for Kubernetes in any
